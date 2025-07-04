@@ -13,8 +13,7 @@ set "token="
 for /f "tokens=1* delims=\ " %%a in ("!arg!") do (
     set "token=%%a"
     set "arg=%%b"
-    echo !token! | findstr "\." >nul
-    if not errorlevel 1 (
+    if not defined arg (
         break > !token!
     ) else (
         mkdir !token!
